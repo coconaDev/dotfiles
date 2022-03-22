@@ -11,5 +11,7 @@ $ ln -s ~/dotfiles/.vimrc ~/.vimrc
 ```
 
 # instraller実行
+```bash
 $ chmod +x install.sh
 $ ./install.sh
+```
