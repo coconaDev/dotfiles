@@ -27,5 +27,3 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export LANG=ja_JP.UTF-8
-export LANG=ja_JP.UTF-8
-export LANG=ja_JP.UTF-8
