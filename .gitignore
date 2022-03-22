@@ -2,8 +2,7 @@
 /*
 /.**
 
-# white list
-!/.bin/
+# folder
 !/.bin/**
 
 # shell
@@ -11,9 +10,10 @@
 !/.profile
 
 # editer
-
+!/.vimrc/**
 
 # terminal
+!/.hyper.js
 
 # cli tools
 
