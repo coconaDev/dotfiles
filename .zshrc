@@ -1,48 +1,33 @@
-###############	HISTORY	########################################
-# history
-HISTFILE=~/.zsh-history		# 履歴を保存するファイル
-HISTSIZE=1000			# メモリに保存する履歴のサイズ
-SAVEHIST=1000			# ファイルに保存する履歴のサイズ
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# share .zsh-history
-setopt inc_append_history	# 実行時に履歴をファイルに追加
-setopt share_history		# 履歴を他のシェルと共有
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-##############	COMPLEMENT	#################################
-# enable completion
-autoload -Uz compinit && compinit
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
 
-# 補完候補をそのまま探す -> 小文字を大文字に変えて探す -> 大文字を小文字に変えて探す
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
-
-# 補完方法毎にグループ化する。
-zstyle ':completion:*' format '%B%F{blue}%d%f%b'
-zstyle ':completion:*' group-name ''
-
-zstyle :compinstall filename '~/.zshrc'
-
-# select=2: 補完候補を一覧から選択
-zstyle ':completion:*:default' menu select=2
-
-################  OTHERS  ######################################
-# automatically change directory when dir name is typed
-setopt auto_cd
-
-# disable ctrl+s, ctrl+q
-setopt no_flow_control
-
-setopt autocd beep
-unsetopt nomatch
-bindkey -v
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
 
+##########	zshファイルの読み込み	#########################
+SCRIPT_DIR=$HOME/dotfiles
+source $SCRIPT_DIR/.zsh/plugins.zsh
+source $SCRIPT_DIR/.zsh/alias.zsh
+source $SCRIPT_DIR/.zsh/config.zsh
 
-################   LOGINSHELL	################################
+eval "$(starship init zsh)"
 
-# pywal settings
-    # WAL_IMGS=($(ls -d ~/dotfiles/wallpaper-images/*))
-    WAL_IMGS+=($(ls -d ~/dotfiles/wallpaper-images/*))
-    SEC=`date +%S`
-    I=$((SEC%$(echo ${#WAL_IMGS[@]})+1))
-    wal -i ${WAL_IMGS[$I]}
-
+clear

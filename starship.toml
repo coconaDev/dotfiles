@@ -1,0 +1,29 @@
+# Starship setting
+
+######	nutoral		######################
+add_newline = true	# 空白行の追加
+scan_timeout = 10	# タイムアウト時間の設定
+
+[character]
+success_symbol = "[❯](bold green)" # コマンド成功時
+error_symbol = "[❯](bold red)"    #コマンド失敗時
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+truncation_symbol = "…/"
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+
+[git_branch]
+symbol = " "
+
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "[$user🌱]($style) "
+disabled = false
+show_always = true
+
+

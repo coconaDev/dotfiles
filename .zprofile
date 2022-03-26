@@ -17,3 +17,12 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export LANG=ja_JP.UTF-8
+
+################   LOGINSHELL	################################
+
+# pywal settings
+    # WAL_IMGS=($(ls -d ~/dotfiles/wallpaper-images/*))
+    WAL_IMGS+=($(ls -d ~/dotfiles/wallpaper-images/*))
+    SEC=`date +%S`
+    I=$((SEC%$(echo ${#WAL_IMGS[@]})+1))
+    wal -i ${WAL_IMGS[$I]}

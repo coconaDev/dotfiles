@@ -4,16 +4,19 @@
 
 # folder
 !/.bin/**
+!/.zsh/**
 
 # shell
 !/.bashrc
-!/.profile
+!/.zprofile
+!/.zshrc
+
 
 # editer
 !/.vimrc/**
 
 # terminal
-!/.hyper.js
+!/starship.toml
 
 # cli tools
 
@@ -22,3 +25,7 @@
 # git
 !/.gitconfig
 !/.gitignore
+
+# others
+!/LICENSE
+!/README.md
