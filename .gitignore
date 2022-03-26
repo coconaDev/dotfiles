@@ -1,31 +1,6 @@
-# all ignore
-/*
-/.**
-
-# folder
-!/.bin/**
-!/.zsh/**
-
-# shell
-!/.bashrc
-!/.zprofile
-!/.zshrc
-
-
-# editer
-!/.vimrc/**
-
-# terminal
-!/starship.toml
-
-# cli tools
-
-# app
+# wallpapers
+/wallpaper-images/**
 
 # git
-!/.gitconfig
-!/.gitignore
-
-# others
-!/LICENSE
-!/README.md
+/.gitconfig
+/.git/**

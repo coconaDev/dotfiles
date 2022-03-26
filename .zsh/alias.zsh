@@ -1,0 +1,6 @@
+alias ..='cd ../'
+alias ...='cd ../../'
+alias dcom='docker-compose'
+alias dk='docker'
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
