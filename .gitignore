@@ -4,3 +4,6 @@
 # git
 /.gitconfig
 /.git/**
+
+# zsh
+/.zsh/proxy.zsh
