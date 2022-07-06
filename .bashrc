@@ -4,6 +4,3 @@
     SEC=`date +%S`
     I=$((SEC%$(echo ${#WAL_IMGS[@]})+1))
     wal -i ${WAL_IMGS[$I]}
-
-
-export DISPLAY=localhost:0.0
