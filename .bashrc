@@ -6,3 +6,4 @@
     wal -i ${WAL_IMGS[$I]}
 
 
+export DISPLAY=localhost:0.0

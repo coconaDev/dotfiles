@@ -31,4 +31,3 @@ source $SCRIPT_DIR/.zsh/proxy.zsh
 
 eval "$(starship init zsh)"
 
-clear
