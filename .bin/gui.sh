@@ -1,4 +1,4 @@
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+export DISPLAY=`hostname`.mshome.net:0.0
 
 sudo service dbus restart
 sudo service x11-common restart

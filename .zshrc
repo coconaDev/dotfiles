@@ -29,5 +29,4 @@ source $SCRIPT_DIR/.zsh/alias.zsh
 source $SCRIPT_DIR/.zsh/config.zsh
 source $SCRIPT_DIR/.zsh/proxy.zsh
 
-
 clear
