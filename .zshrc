@@ -27,6 +27,9 @@ SCRIPT_DIR=$HOME/dotfiles
 source $SCRIPT_DIR/.zsh/plugins.zsh
 source $SCRIPT_DIR/.zsh/alias.zsh
 source $SCRIPT_DIR/.zsh/config.zsh
-source $SCRIPT_DIR/.zsh/proxy.zsh
+# source $SCRIPT_DIR/.zsh/proxy.zsh
+
+
+export DISPLAY=`hostname`.mshome.net:0.0
 
 clear

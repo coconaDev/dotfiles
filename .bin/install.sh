@@ -20,6 +20,9 @@ do
      [[ "$f" == "." ]] && continue
      [[ "$f" == ".." ]] && continue
      [[ "$f" == ".bin" ]] && continue
+     [[ "$f" == ".zsh" ]] && continue
+     [[ "$f" == ".bashrc" ]] && continue
+
 
     ln -snf ${THIS_DIR}/"${f}" $HOME/"${f}"
     echo "Installed $f"
