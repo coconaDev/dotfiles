@@ -33,9 +33,3 @@ export DISPLAY=`hostname`.mshome.net:0.0
 
 export HTTP_PROXY=http://cproxy.okinawa-ct.ac.jp:8080/
 export HTTPS_PROXY=${HTTP_PROXY}
-
-export PATH="~/.rbenv/bin:$PATH"
-eval "$(rbenv init - bash)"
-clear
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
