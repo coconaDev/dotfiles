@@ -1,3 +1,4 @@
 # PowerShell
 $env:http_proxy="http://myproxy.jp:xxxx"
 $env:https_proxy="http://myproxy.jp:xxxx"
+get-childitem env:http_proxy // 確認
