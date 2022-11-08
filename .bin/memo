@@ -1,0 +1,3 @@
+# PowerShell
+$env:http_proxy="http://myproxy.jp:xxxx"
+$env:https_proxy="http://myproxy.jp:xxxx"
