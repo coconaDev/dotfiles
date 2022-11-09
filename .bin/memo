@@ -12,5 +12,7 @@ git clone dotfiles // install.sh 修正するべき
 sudo apt install zsh
 chsh -s /usr/bin/zsh
 
-# install Nerd font
+# Nerd font
 https://www.nerdfonts.com/font-downloads
+
+# pywal
