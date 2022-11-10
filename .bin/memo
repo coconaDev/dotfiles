@@ -46,3 +46,8 @@ npm -g config set https-proxy "https://<server>:<port>/"
 # unset proxy
 npm -g config delete proxy
 npm -g config delete https-proxy
+
+# upgdate node & npm
+proxy=http://taro:password@192.168.1.1:8080 // ~.curlrc
+
+
