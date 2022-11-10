@@ -33,3 +33,16 @@ $ ln -s ~/dotfiles/.vimrc ~/.vimrc
 $ chmod +x install.sh
 $ ./install.sh
 ```
+
+# npm install
+sudo apt install npm
+// need proxy config 
+npm install -g npx
+
+# set proxy
+npm -g config set proxy "http://<server>:<port>/"
+npm -g config set https-proxy "https://<server>:<port>/"
+
+# unset proxy
+npm -g config delete proxy
+npm -g config delete https-proxy
