@@ -19,6 +19,7 @@ https://www.nerdfonts.com/font-downloads
 git clone https://github.com/dylanaraps/pywal
 cd pywal
 pip3 install --user .
+apt install imagemagick
 
 # dotfiles内にうつすとき用のメモ
 ```bash
