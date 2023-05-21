@@ -21,7 +21,6 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-
 ##########	zshファイルの読み込み	#########################
 SCRIPT_DIR=$HOME/dotfiles
 source $SCRIPT_DIR/.zsh/plugins.zsh
