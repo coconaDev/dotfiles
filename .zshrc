@@ -29,7 +29,7 @@ source $SCRIPT_DIR/.zsh/alias.zsh
 source $SCRIPT_DIR/.zsh/config.zsh
 source $SCRIPT_DIR/.zsh/.p10k.zsh
 # source $SCRIPT_DIR/.zsh/proxy.zsh
-export DISPLAY=`hostname`.mshome.net:0.0
+# export DISPLAY=`hostname`.mshome.net:0.0
 
-export HTTP_PROXY=http://cproxy.okinawa-ct.ac.jp:8080/
-export HTTPS_PROXY=${HTTP_PROXY}
+# export HTTP_PROXY=http://cproxy.okinawa-ct.ac.jp:8080/
+# export HTTPS_PROXY=${HTTP_PROXY}

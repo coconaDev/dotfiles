@@ -9,25 +9,11 @@ cd $THIS_DIR
 
 echo "start setup..."
 
-for f in * .*;
-do
-     [[ "$f" == ".git" ]] && continue
-     [[ "$f" == ".gitignore" ]] && continue
-     [[ "$f" == "README.md" ]] && continue
-     [[ "$f" == "install.sh" ]] && continue
-     [[ "$f" == "LICENSE" ]] && continue
-     [[ "$f" == "wallpaper-images" ]] && continue
-     [[ "$f" == "." ]] && continue
-     [[ "$f" == ".." ]] && continue
-     [[ "$f" == ".bin" ]] && continue
-     [[ "$f" == ".zsh" ]] && continue
-     [[ "$f" == ".bashrc" ]] && continue
+ln -nfs ~/dotfiles/.bashrc ~/.bashrc
+ln -nfs ~/dotfiles/.zprofile ~/.zprofile
+ln -nfs  ~/dotfiles/.zshrc ~/.zshrc
 
-
-    ln -snf ${THIS_DIR}/"${f}" $HOME/"${f}"
-    echo "Installed $f"
-
-done
+echo "Installed"
 
 cat << END
 
