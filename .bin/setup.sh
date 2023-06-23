@@ -1,41 +1,46 @@
-#!/bin/bash
-#=================================================
-# apt update
-#=================================================
-yes | sudo apt update
-yes | sudo apt upgrade
+# Proxyの入力
+echo -n "Are you need proxy settings?(y/n):"
+read isProxy
+case $isProxy in
+  [y] | '' )
+    echo -n "SSID:"
+    read SSID
+    
+    echo -n "Proxy address:"
+    read ProxyAddress
 
-#=================================================
-# change the folder name to English
-#=================================================
-env LANGUAGE=C LC_MESSAGES=C xdg-user-dirs-gtk-update
+    echo "set SSID $SSID" >> ~/.proxySetting
+    echo "set ProxyAddress $ProxyAddress" >> ~/.proxySetting
 
-#====================================================================
-# 文字化け対策
-#====================================================================
-gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8','CURRENT','SHIFT_JIS','EUC-JP','ISO-2022-JP','UTF-16']"
-gsettings set org.gnome.gedit.preferences.encodings shown-in-menu "['UTF-8','SHIFT_JIS','EUC-JP','ISO-2022-JP','UTF-16']"
+    break;;
+  [n] )
+    break;;
+  esac
 
-#====================================================================
-# Ubuntu Web Apps(Gmail/Amazon/Twitter/Facebook)削除
-#====================================================================
-yes | sudo apt remove unity-webapps-common xul-ext-unity xul-ext-websites-integration
+# PowerShell に Proxyの設定 -> 別ファイルに
 
-#====================================================================
-# software install
-#====================================================================
-yes | sudo apt install curl
-yes | sudo apt install imagemagick
-yes | sudo apt install zsh
-yes | sudo apt install neovim
+# apt のアップデート
+sudo apt update
+sudo apt -y upgrade
 
-#====================================================================
-# C languege setting
-#====================================================================
-yes | sudo apt install gcc
+sudo apt -y install git
 
-#====================================================================
-# install.sh
-#====================================================================
-chmod +x install.sh
-./install.sh
+sudo apt -y install zsh
+chsh -s /usr/bin/zsh
+
+nerd_fonts() {
+  git clone --branch=master --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+  cd nerd-fonts
+  ./install.sh $1
+  cd ..
+  rm -rf nerd-fonts
+}
+# pywal
+git clone https://github.com/dylanaraps/pywal
+cd pywal
+pip3 -y install --user .
+cd ~
+sudo apt install imagemagick
+
+git clone https://github.com/YuSzmiya/dotfiles.git
+
